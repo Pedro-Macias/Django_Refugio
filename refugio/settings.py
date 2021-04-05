@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # registramos nuestra aplicacion
     'refugioApp',
+    'serviciosApp',
 ]
 
 MIDDLEWARE = [
