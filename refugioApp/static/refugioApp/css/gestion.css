@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway';
+  font-family: 'RocknRoll One', sans-serif;
 }
 
 p {
@@ -28,7 +28,7 @@ p {
   margin-bottom: 5rem;
   text-transform: uppercase;
   line-height: 1;
-  font-family: 'Raleway';
+  font-family: 'RocknRoll One', sans-serif;
 }
 
 .site-heading .site-heading-upper {
@@ -81,7 +81,7 @@ p {
 
 #mainNav {
   background-color: rgba(201, 131, 73, 1);
-  font-family: 'Raleway';
+  font-family: 'RocknRoll One', sans-serif;
 }
 
 #mainNav .navbar-brand {
