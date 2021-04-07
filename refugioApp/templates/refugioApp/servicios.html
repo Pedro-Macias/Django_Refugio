@@ -11,6 +11,17 @@
 <!--BLOQUE CONTENIDO-->
 {% block content %}
 
-<h1 class='text-success'>aqui ira el contenido de Servicios</h1>
+<h1 class='text-success'>Todos nuestros Servicios</h1>
+    <!--recuperamos los servicios-->
+{% for servicio in servicios %}
+    <div>
+        <p>
+        <h2 class="text-info">{{ servicio.titulo }}</h2>
+        <h5 class="text-info">{{ servicio.contenido }}</h5>
+        <!-- le indicamos .url para que bustque la direccion de la imagen-->
+        <p><img src="{{ servicio.imagen.url}}"></p>
+        </p>
+    </div>
+{% endfor %}
 
 {% endblock %}
