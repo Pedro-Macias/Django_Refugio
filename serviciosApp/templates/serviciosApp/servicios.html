@@ -10,23 +10,24 @@
 
 <!--BLOQUE CONTENIDO-->
 {% block content %}
-
-<h1 class=' titulo-serv  text-center my-4'>Todos nuestros Servicios</h1>
+<div class="container my-4">
+<h1 class=' titulo-serv  text-center my-5'>Todos nuestros Servicios</h1>
+</div>
     <!--recuperamos los servicios-->
 {% for servicio in servicios %}
 
-<section class="mt-4">
+<section class="mt-4 mb-5">
     <div class="container mt-4">
         <div class="card mb-3" style="max-width: 1200px;">
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <!-- le indicamos .url para que bustque la direccion de la imagen-->
-                    <img src="{{ servicio.imagen.url}}" class="card-img" alt="{{ servicio.titulo }}">
+                    <img src="{{ servicio.imagen.url}}" class="card-img " alt="{{ servicio.titulo }}">
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ servicio.titulo }}</h5>
-                        <p class="card-text">{{ servicio.contenido }}</p>
+                <div class="col-md-8 card-serv">
+                    <div class="card-body card-servicios">
+                        <h2 class="card-title mb-3">{{ servicio.titulo }}</h2>
+                        <p class="card-text mt-5">{{ servicio.contenido }}</p>
                     </div>
                 </div>
             </div>

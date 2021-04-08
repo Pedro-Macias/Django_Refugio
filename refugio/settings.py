@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # registramos nuestra aplicacion
     'refugioApp',
     'serviciosApp',
+    'blogApp',
 ]
 
 MIDDLEWARE = [

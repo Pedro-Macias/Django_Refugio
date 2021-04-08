@@ -281,6 +281,15 @@ ul.errorlist{
 .titulo-serv{
   color: rgba(201, 131, 73, 1);
   font-family: 'RocknRoll One', sans-serif;
+  font-size: 3em;
+}
+.card-serv{
+  background-color: rgba(201, 131, 73, 1);
 
-
+}
+.card-servicios{
+  background-color: rgba(201, 131, 73, 1);
+  color: cornsilk;
+  text-align: center;
+  margin-top: 5%;
 }
