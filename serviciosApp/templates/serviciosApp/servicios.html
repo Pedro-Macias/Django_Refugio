@@ -1,0 +1,40 @@
+<!--heredamos la plantilla-->
+{% extends "refugioApp/plantilla.html" %}
+
+<!--cargamos elementos estaticos-->
+{% load static %}
+
+<!--BLOQUE TITULO-->
+{% block title%} Servicios {%endblock%}
+
+
+<!--BLOQUE CONTENIDO-->
+{% block content %}
+
+<h1 class=' titulo-serv  text-center my-4'>Todos nuestros Servicios</h1>
+    <!--recuperamos los servicios-->
+{% for servicio in servicios %}
+
+<section class="mt-4">
+    <div class="container mt-4">
+        <div class="card mb-3" style="max-width: 1200px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <!-- le indicamos .url para que bustque la direccion de la imagen-->
+                    <img src="{{ servicio.imagen.url}}" class="card-img" alt="{{ servicio.titulo }}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ servicio.titulo }}</h5>
+                        <p class="card-text">{{ servicio.contenido }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>
+
+    
+{% endfor %}
+
+{% endblock %}

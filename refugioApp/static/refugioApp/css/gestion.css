@@ -277,3 +277,10 @@ ul.errorlist{
   font-style: italic;
   color: red;
 }
+  /* SERVICIOS */
+.titulo-serv{
+  color: rgba(201, 131, 73, 1);
+  font-family: 'RocknRoll One', sans-serif;
+
+
+}
