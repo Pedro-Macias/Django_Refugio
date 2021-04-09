@@ -1,0 +1,49 @@
+<!--heredamos la plantilla-->
+{% extends "refugioApp/plantilla.html" %}
+
+<!--cargamos elementos estaticos-->
+{% load static %}
+
+<!--BLOQUE TITULO-->
+{% block title%} Blog {%endblock%}
+
+
+<!--BLOQUE CONTENIDO-->
+{% block content %}
+<div class="container my-4">
+<h1 class=' titulo-blog  text-center my-5'>Nuestro blog</h1>
+</div>
+    <!--recuperamos los servicios-->
+<section>
+    <div class="container">
+        <div class="card-deck">
+
+    {% for entrada in entradas %}
+
+        <div class="card my-5 card-post">
+            <img src="{{ entrada.imagen.url}}" class="card-img-top" alt="{{ entrada.titulo }}">
+            <div class="card-body card-blog">
+                <h5 class="card-title">{{ entrada.titulo }}</h5>
+                <p class="card-text">{{ entrada.contenido }}</p>
+            </div>
+            <div class="card-footer text-center ">
+                <small class="post-footer"> Autor:  {{ entrada.autor }}</small>
+            </div>
+        </div>
+
+    {% endfor %}
+    </div>
+</section>
+<!--barra de categorias-->
+<section>
+    <div class="blog-cat mb-4">
+    <p>Categorias: &nbsp; &nbsp;
+    {% for entrada in entradas%}
+        {%for categoria in entrada.categorias.all %}
+            {{categoria.nombre}} &nbsp; &nbsp;
+        {% endfor %}
+    {%endfor%}</p>
+    </div>
+</section>
+
+{% endblock %}

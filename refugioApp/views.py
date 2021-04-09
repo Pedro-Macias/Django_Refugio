@@ -11,8 +11,6 @@ def home(request):
 def refugio(request):
     return render (request,'refugioApp/refugio.html')
 
-def blog(request):
-    return render (request,'refugioApp/blog.html')
 
 def contacto(request):
     return render (request,'refugioApp/contacto.html')

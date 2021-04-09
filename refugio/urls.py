@@ -23,4 +23,5 @@ urlpatterns = [
     # enlazar las urls del proyecto con las urls de la aplicacion
     path('', include('refugioApp.urls')),
     path('servicios/',include('serviciosApp.urls')),
+    path('blog/',include('blogApp.urls')),
 ]
