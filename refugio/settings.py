@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'refugioApp',
     'serviciosApp',
     'blogApp',
+    'contactoApp',
 ]
 
 MIDDLEWARE = [
