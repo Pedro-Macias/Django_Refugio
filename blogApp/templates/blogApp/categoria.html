@@ -1,0 +1,57 @@
+<!--heredamos la plantilla-->
+{% extends "refugioApp/plantilla.html" %}
+
+<!--cargamos elementos estaticos-->
+{% load static %}
+
+<!--BLOQUE TITULO-->
+{% block title%} Blog {%endblock%}
+
+
+<!--BLOQUE CONTENIDO-->
+{% block content %}
+<div class="container my-4">
+<h1 class=' titulo-blog  text-center my-5'>Nuestro blog</h1>
+</div>
+    <!--recuperamos los servicios-->
+<<section>
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2">
+            {% for entrada in entradas %}    
+            <div class="col mb-4">
+                <div class="card card-post">
+                    <img src="{{ entrada.imagen.url}}" class="card-img-top" alt="{{ entrada.titulo }}">
+                    <div class="card-body card-blog">
+                        <h5 class="card-title">{{ entrada.titulo }}</h5>
+                        <p class="card-text">{{ entrada.contenido }}</p>
+                    </div>
+                    <div class="card-footer text-center ">
+                        <small class="post-footer"> Autor:  {{ entrada.autor }}  &nbsp /  &nbsp   </small> 
+                        <small class='post-footer'> Categorias : 
+                            {%for categoria in entrada.categorias.all %}
+                                <a href="{% url 'categoria' categoria.id %} " class='link-cat'>{{categoria.nombre}}</a>
+                            {% endfor %}
+                            </small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!--barra de categorias-->
+<section>
+    <div class="container list-cat mb-4"></div>
+        <ul id="lista-cat">
+            <li>Categorias:</li>
+            {% for entrada in entradas%}
+                {%for categoria in entrada.categorias.all %}
+                    <li>{{categoria.nombre}}</li>
+                {% endfor %}
+            {%endfor%}</p>
+        </ul>
+    </div>
+</section>
+
+{% endblock %}

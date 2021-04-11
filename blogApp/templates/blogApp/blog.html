@@ -14,36 +14,51 @@
 <h1 class=' titulo-blog  text-center my-5'>Nuestro blog</h1>
 </div>
     <!--recuperamos los servicios-->
+
 <section>
-    <div class="container">
-        <div class="card-deck">
-
-    {% for entrada in entradas %}
-
-        <div class="card my-5 card-post">
-            <img src="{{ entrada.imagen.url}}" class="card-img-top" alt="{{ entrada.titulo }}">
-            <div class="card-body card-blog">
+<div  class= 'container'>
+    <div  class='row' >
+    {% for entrada in entradas %}    
+        <!-- 8 columnas-->
+        <div class='col-8 mb-4'>
+            <div class="card-body card-blog py-3 px-3">
                 <h5 class="card-title">{{ entrada.titulo }}</h5>
                 <p class="card-text">{{ entrada.contenido }}</p>
             </div>
             <div class="card-footer text-center ">
-                <small class="post-footer"> Autor:  {{ entrada.autor }}</small>
+                <small class="post-footer"> Autor:  {{ entrada.autor }}  &nbsp /  &nbsp   </small> 
+                <small class='post-footer'> Categorias : 
+                    {%for categoria in entrada.categorias.all %}
+                        <a href="{% url 'categoria' categoria.id %} " class='link-cat'>{{categoria.nombre}}</a>
+                    {% endfor %}
+                </small>
             </div>
         </div>
-
-    {% endfor %}
+        <!-- 4 columnas-->
+        <div class= 'col-4 py-3 mb-4'>
+            
+        <img src="{{ entrada.imagen.url}}" class="card-img-top py-3 px-3" alt="{{ entrada.titulo }}">
+            
+        </div>
+        
+    {% endfor%}    
     </div>
+</div>
 </section>
+
 <!--barra de categorias-->
+<!--
 <section>
-    <div class="blog-cat mb-4">
-    <p>Categorias: &nbsp; &nbsp;
-    {% for entrada in entradas%}
-        {%for categoria in entrada.categorias.all %}
-            {{categoria.nombre}} &nbsp; &nbsp;
-        {% endfor %}
-    {%endfor%}</p>
+    <div class="container list-cat mb-4"></div>
+        <ul id="lista-cat">
+            <li>Categorias:</li>
+            {% for entrada in entradas%}
+                {%for categoria in entrada.categorias.all %}
+                    <li><a href="{% url 'categoria' categoria.id %} " class='link-cat'>{{categoria.nombre}}</a></li>
+                {% endfor %}
+            {%endfor%}</p>
+        </ul>
     </div>
 </section>
-
+-->
 {% endblock %}

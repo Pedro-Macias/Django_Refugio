@@ -313,12 +313,23 @@ ul.errorlist{
 }
 .post-footer{
   color: rgba(255, 248, 220, 0.8);
-  text-align: center;
   margin-top: 5%;
 }
-.blog-cat{
-  width: 75%;
+#lista-cat{
   margin: auto;
   text-align: center;
+}
+#lista-cat li {
+  display:inline;
+  padding-left:3px;
+  padding-right:3px;
+  margin:auto;
   color: rgba(255, 248, 220, 1);
+}
+.link-cat{
+  color:rgba(255, 248, 220, 1);
+  text-decoration: underline;
+}
+.link-cat:hover{
+  color:rgba(201, 131, 73, 0.6);
 }
