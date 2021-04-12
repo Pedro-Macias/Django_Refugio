@@ -47,18 +47,17 @@
 </section>
 
 <!--barra de categorias-->
-<!--
+
 <section>
-    <div class="container list-cat mb-4"></div>
+    <div class="container list-cat mb-4">
         <ul id="lista-cat">
             <li>Categorias:</li>
-            {% for entrada in entradas%}
-                {%for categoria in entrada.categorias.all %}
-                    <li><a href="{% url 'categoria' categoria.id %} " class='link-cat'>{{categoria.nombre}}</a></li>
-                {% endfor %}
-            {%endfor%}</p>
+            {% for c in categorias %}
+            <li><a href="{% url 'categoria' c.id %} " class='link-cat'>{{c.nombre}}</a></li>
+            {% endfor %}
+            
         </ul>
     </div>
 </section>
--->
+
 {% endblock %}

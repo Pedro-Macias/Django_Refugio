@@ -10,9 +10,17 @@
 
 <!--BLOQUE CONTENIDO-->
 {% block content %}
-
-<h1 class='text-primary'>formulario de contacto</h1>
-
-<p class='text-primary'>{{form_Contacto}}</p>
-
+<section>
+    <div class='container my-5'>
+    <h1 class='mb-4 form-titulo'>Formulario de Contacto</h1>
+        <div class= 'container form-contactos my-2 py-3 '>
+            <form action="" method='POST'>
+                <!--token de seguridad-->
+                {% csrf_token %}
+                <table class='form-table'>{{form_Contacto.as_table}}</table>
+                <input type="submit" value='Enviar' class='form-input'>
+            </form>
+        </div>
+    </div>
+</section>
 {% endblock %}

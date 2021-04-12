@@ -6,7 +6,8 @@ from blogApp.models import Post, Categoria
 def blog(request):
     # en una variable recuperamos todos los objetos que tengo dentro de la clase Servicio
     entradas= Post.objects.all()
-    return render (request,'blogApp/blog.html',{'entradas':entradas})
+    categorias = Categoria.objects.all()
+    return render (request,'blogApp/blog.html',{'entradas':entradas,'categorias':categorias})
 
 
 def categoria(request, categoria_id):

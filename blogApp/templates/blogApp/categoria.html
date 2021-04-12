@@ -40,18 +40,14 @@
         </div>
     </div>
 </section>
-<!--barra de categorias-->
 <section>
-    <div class="container list-cat mb-4"></div>
+    <div class="container list-cat mb-4">
         <ul id="lista-cat">
-            <li>Categorias:</li>
-            {% for entrada in entradas%}
-                {%for categoria in entrada.categorias.all %}
-                    <li>{{categoria.nombre}}</li>
-                {% endfor %}
-            {%endfor%}</p>
+            <li>Volver a : </li>
+            
+            <li><a href="{% url 'Blog' %} " class='link-cat'>Blog</a></li>
+            
         </ul>
     </div>
 </section>
-
 {% endblock %}
