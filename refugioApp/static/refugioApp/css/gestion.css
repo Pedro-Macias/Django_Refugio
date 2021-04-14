@@ -337,6 +337,7 @@ ul.errorlist{
 /* FORMULARIO CONTACTO */
 .form-contactos{
   background-color: rgba(201, 131, 73, 1); 
+  border-radius: 5px;
   width: 50%;
   margin: auto;
 }
@@ -351,10 +352,13 @@ ul.errorlist{
   font-family: 'RocknRoll One', sans-serif;
 }
 .form-input{
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
+  font-weight: bold;
   color: rgba(201, 131, 73, 1);
+  font-family: 'RocknRoll One', sans-serif;
+} 
+
+.form-mensaje{
+  text-align: center;
+  color:rgba(255, 248, 220, 1);
   font-family: 'RocknRoll One', sans-serif;
 }
