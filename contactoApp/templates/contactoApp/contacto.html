@@ -17,6 +17,9 @@
         {%if 'ok' in request.GET %}
             <p class='form-mensaje'>Informacion enviada correctamente, Gracias</p>
         {% endif %}
+        {%if 'fail' in request.GET %}
+            <p class='form-mensaje'>Error en el Envio</p>
+        {% endif %} 
             <form action="" method='POST'>
                 <!--token de seguridad-->
                 {% csrf_token %}
