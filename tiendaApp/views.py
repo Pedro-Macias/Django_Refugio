@@ -4,9 +4,5 @@ from django.shortcuts import render , HttpResponse
 
 # Create your views here.
 
-def home(request):
-    return render (request,'refugioApp/home.html')
-
-
-
-
+def tienda(request):
+    return render (request,'tiendaApp/tienda.html')
