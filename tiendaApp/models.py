@@ -29,7 +29,6 @@ class Producto(models.Model):
     imagen = models.ImageField(upload_to='tienda',null=True, blank=True)
     precio = models.FloatField()
     disponibilidad =models.BooleanField(default=True)
-    # un post puede tener varias categorias 
     categorias =models.ForeignKey(CategoriaProducto, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True, verbose_name='creado')
     updated = models.DateTimeField(auto_now_add=True, verbose_name='modificado')
@@ -39,5 +38,5 @@ class Producto(models.Model):
         verbose_name_plural = 'Productos'
     
     def __str__(self):
-        return self.titulo
+        return self.nombre
     
