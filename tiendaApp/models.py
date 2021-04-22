@@ -16,8 +16,8 @@ class CategoriaProducto(models.Model):
     updated = models.DateTimeField(auto_now_add=True, verbose_name='modificado')
 
     class Meta:
-        verbose_name='Categoria Producto'
-        verbose_name_plural = 'Categorias de Productos'
+        verbose_name='categoriaPro'
+        verbose_name_plural = 'categoriasPro'
     
     def __str__(self):
         return self.nombre

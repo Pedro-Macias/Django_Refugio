@@ -362,3 +362,13 @@ ul.errorlist{
   color:rgba(255, 248, 220, 1);
   font-family: 'RocknRoll One', sans-serif;
 }
+/* tienda */
+
+.link-tienda{
+  color: rgba(255, 248, 220, 1);
+  background-color: rgba(201, 131, 73, 1) ;
+}
+.link-tienda:hover{
+  color: rgba(255, 248, 220, 0.8);
+  background-color:rgba(201, 131, 73, 0.6);
+}

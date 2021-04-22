@@ -10,26 +10,25 @@
 
 <!--BLOQUE CONTENIDO-->
 {% block content %}
+<section class='mb-5'>
 <div class="container my-4">
 <h1 class=' titulo-serv  text-center my-5'>Nuestra Tienda</h1>
 </div> 
     <div class='container'>
         <div class ='row'>
-        {% for producto in productos %}
+        {% for categoriaPro in categoriasPro %}
             <div class='col-md-4 my-3'>
                 <div class='card '>
-                    <img src="{{ producto.imagen.url}}" class='card-img-top'  alt="{{ producto.nombre }}">
+                    <img src="{{ categoriaPro.imagen.url}}" class='card-img-top'  alt="{{ categoriaPro.nombre }}">
                     <div class="card-body text-center">
-                        <h5 class="card-title">{{ producto.nombre }}</h5>
-                        <h6 class="card-subtitle">{{ producto.descripcion }}</h6>
-                        <p class= card-text > {{ producto.precio }}</p>
-                        <span>{{producto.categorias}}</span>
+                        <a href="{% url 'TiendaPro' categoriaPro.id %}"><h5 class="btn link-tienda">{{ categoriaPro.nombre }}</h5></a>
                     </div>
                 </div>
             </div>
         {% endfor %}
         </div>
     </div>
+</section>
 
 
 

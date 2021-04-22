@@ -1,0 +1,44 @@
+<!--heredamos la plantilla-->
+{% extends "refugioApp/plantilla.html" %}
+
+<!--cargamos elementos estaticos-->
+{% load static %}
+
+<!--BLOQUE TITULO-->
+{% block title%} Tienda {%endblock%}
+
+
+<!--BLOQUE CONTENIDO-->
+{% block content %}
+<section class='mb-5'>
+<div class="container my-4">
+<h1 class=' titulo-serv  text-center my-5'>{{categoria.nombre}}</h1>
+</div> 
+    <div class='container'>
+        <div class ='row'>
+        {% for producto in productos %}
+            <div class='col-md-4 my-3'>
+                <div class='card '>
+                    <img src="{{ producto.imagen.url}}" class='card-img-top'  alt="{{ producto.nombre }}">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ producto.nombre }}</h5>
+                        <h6 class="card-subtitle">{{ producto.descripcion }}</h6>
+                        <p class= card-text > {{ producto.precio }}</p>
+                        <span>{{producto.categorias}}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>
+<div class="container list-cat mb-4">
+        <ul id="lista-cat">
+            <li><a href="{% url 'Tienda' %} " class='link-cat'><h5 class="btn link-tienda"> Volver a la Tienda </h5></a></li>
+            
+        </ul>
+    </div>
+</section>
+
+
+{% endblock %}
