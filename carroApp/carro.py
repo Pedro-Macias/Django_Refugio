@@ -18,3 +18,42 @@ class Carro:
                 'imagen':producto.imagen.url
             }
         else:
+            for key , value in self.carro.items():
+                if key ==str(producto.id):
+                    value['cantidad']= value['cantidad']+1
+                    break
+
+        # almacenar en el carro
+        self.guardar_carro()
+
+    # funcion guardar carro 
+    
+    def guardar_carro(self):
+        self.session['carro']= self.carro
+        self.session.modified= True 
+    
+    # eliminar un producto
+    
+    def eliminar(self,producto):
+        producto.id = str(producto)
+        if producto.id in self.carro:
+            del self.carro[producto.id]
+            self.guardar_carro()
+    
+    # restar unidades de un producto
+
+    def restar_producto(self, producto):
+        for key , value in self.carro.items():
+                if key ==str(producto.id):
+                    value['cantidad']= value['cantidad']-1
+                    if value['cantidad']<1 :
+                        self.eliminar(producto)
+                    break
+        self.guardar_carro()
+    
+    # vaciar el carro
+
+    def limpiar_carro(self):
+        self.session['carro']= {}
+        self.session.modified= True 
+
