@@ -15,6 +15,11 @@
 <h1 class=' titulo-serv  text-center my-5'>{{categoria.nombre}}</h1>
 </div> 
     <div class='container'>
+        <!--situar el carro de la compra-->
+        <div style='float:right;'>
+            <p class='text-success'> Carro de la compra</p>
+        </div>
+        
         <div class ='row'>
         {% for producto in productos %}
             <div class='col-md-4 my-3'>
@@ -24,7 +29,10 @@
                         <h5 class="card-title">{{ producto.nombre }}</h5>
                         <h6 class="card-subtitle">{{ producto.descripcion }}</h6>
                         <p class= card-text > {{ producto.precio }}</p>
-                        <span>{{producto.categorias}}</span>
+                    </div>
+                    <!-- boton de agregar producto -->
+                    <div class='card-footer text-center'>
+                    <a href="#" class='btn btn-success'>Agregar al Carro</a>
                     </div>
                 </div>
             </div>
